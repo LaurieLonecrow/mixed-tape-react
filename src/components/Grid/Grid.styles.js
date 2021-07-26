@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
+  padding: 20px 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 2rem;

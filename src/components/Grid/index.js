@@ -1,11 +1,14 @@
 import React from "react";
 
+import Playlist from "../Playlist";
+
 import { Wrapper, Content } from "./Grid.styles.js";
 
-const Grid = ({ header, children }) => (
+const Grid = () => (
   <Wrapper>
-    <h1>{header}</h1>
-    <Content>{children}</Content>
+    <Content>
+      <Playlist />
+    </Content>
   </Wrapper>
 );
 
