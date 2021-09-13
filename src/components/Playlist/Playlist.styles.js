@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  color: var(--darkGray);
+  background-color: var(--darkGray);
 `;
 
 export const Input = styled.div`

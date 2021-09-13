@@ -5,8 +5,8 @@ import { Wrapper, Content, Text } from "./NavBar.styles";
 const Navbar = () => (
   <Wrapper>
     <Content>
+    <h1>Mixed Tape</h1>
       <Text>
-        <h1>Mixed Tape</h1>
         <li>Home</li>
         <li>Login</li>
       </Text>
