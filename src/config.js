@@ -13,8 +13,8 @@
  var querystring = require('querystring');
  var cookieParser = require('cookie-parser');
  
- var client_id = '70187c959b294d23b6bd710c3c916063'; // Your client id
- var client_secret = '6cb859675d5b4a9790f7cb9f77ae5086'; // Your secret
+ var client_id = ''; // Your client id
+ var client_secret = ''; // Your secret
  var redirect_uri = 'http://localhost:3000/'; // Your redirect uri
  
  /**
