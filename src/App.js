@@ -1,21 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route } from "react-router";
 
 //stylesheet
 import { GlobalStyle } from "./GlobalStyle";
 
 //components
-import Header from "./components/Header";
 import Home from "./components/Home";
+import Tracks from "./components/Tracks";
 
 const App = () => (
   <>
-    <Router>
-      <Header />
-      <Home />
 
+      <Home />
+      <Route path="/:playlistId" element={<Tracks />} />
       <GlobalStyle />
-    </Router>
   </>
 );
 export default App;
