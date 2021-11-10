@@ -2,8 +2,9 @@ import {useState, useEffect} from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 
 const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirectUri = "http://localhost:3000/";
-const clientId = "70187c959b294d23b6bd710c3c916063";
+const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID; 
+// const client_secret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET; 
+const redirectUri = 'http://localhost:3000/'; 
 
 const spotify = new SpotifyWebApi();
 
@@ -17,6 +18,7 @@ const scopes = [
   "app-remote-control",
 ];
 
+console.log(clientId)
 export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
     "%20")}&response_type=token&show_dialog=true`;
 

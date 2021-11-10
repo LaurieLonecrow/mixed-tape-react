@@ -10,14 +10,14 @@ const Grid = ({playlists}) => {
 return (
   <Wrapper>
     <Content>
-    {playlists.map(playlist => (
+    {/* {playlists.map(playlist => (
               <Playlist 
                 key={playlist.id}
                 name={playlist.name}
                 onClick={
                   <Link to={`/${playlist.id}`}/> }
                 />
-    ))}
+    ))} */}
     </Content>
   </Wrapper>
 )

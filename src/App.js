@@ -1,18 +1,18 @@
 import React from "react";
-import { Route } from "react-router";
+// import { Route } from "react-router";
 
 //stylesheet
 import { GlobalStyle } from "./GlobalStyle";
 
 //components
 import Home from "./components/Home";
-import Tracks from "./components/Tracks";
+// import Tracks from "./components/Tracks";
 
 const App = () => (
   <>
 
       <Home />
-      <Route path="/:playlistId" element={<Tracks />} />
+      {/* <Route path="/:playlistId" element={<Tracks />} /> */}
       <GlobalStyle />
   </>
 );

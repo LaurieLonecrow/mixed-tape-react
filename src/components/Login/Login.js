@@ -10,6 +10,7 @@ export default function Login() {
             alt="spotify-logo"
             /> */}
             <a href={loginUrl}>Login</a>
+            
         </div>
     )
 }
