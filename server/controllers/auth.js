@@ -1,6 +1,6 @@
 'use strict'
 
-const querystring = require('querystring');
+const querystring = require('query-string');
 const axios = require('axios');
 
 const client_id = process.env.SPOTIFY_CLIENT_ID; // client id
@@ -19,8 +19,6 @@ const generateRandomString = function(length) {
 const stateKey = 'spotify_auth_state';
 
 const login = (req, res) => {
-    // res.redirect(`https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=code&redirect_uri=${redirect_uri}`);
-
     const state = generateRandomString(16);
     res.cookie(stateKey, state);
 
@@ -65,8 +63,10 @@ const login = (req, res) => {
       } else {
         res.redirect(`/?${querystring.stringify({ error: 'invalid_token' })}`);
       }
+    })
+    .catch(error => {
+      res.send(error);
     });
-       
   }
   
     

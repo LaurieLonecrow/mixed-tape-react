@@ -1,6 +1,6 @@
 
 
-const querystring = require('querystring');
+const querystring = require('query-string');
 const axios = require('axios');
 
 const client_id = process.env.SPOTIFY_CLIENT_ID; // client id

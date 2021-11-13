@@ -7,7 +7,7 @@ import { Wrapper, Content } from "./Header.styles.js";
 
 const Header = () => (
   <Wrapper>
-<HeroImage />
+    <HeroImage />
     <Content>
       <Navbar />
     </Content>

@@ -2,12 +2,11 @@ import React from "react";
 
 import { Wrapper, Content, Input } from "./Playlist.styles.js";
 
-const Playlist = ({name, link}) => (
+const Playlist = (text) => (
   <Wrapper>
     <Content>
       <Input>
-        <h1 type="text">{name}</h1>
-        <button onClick={link}>View Playlist</button>
+        <h1 type="text">{console.log(text)}</h1>
       </Input>
     </Content>
   </Wrapper>

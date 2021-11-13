@@ -1,6 +1,6 @@
 import React from "react";
 
-import Login from "../Login/Login";
+import Login from "../Login";
 
 import { Wrapper, Content, Text } from "./NavBar.styles";
 
@@ -11,6 +11,9 @@ const Navbar = () => (
       <Text>
         <li>Home</li>
         <li> <Login /></li>
+        <li>Playlists</li>
+      
+        
       </Text>
     </Content>
   </Wrapper>

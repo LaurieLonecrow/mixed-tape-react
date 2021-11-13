@@ -1,49 +1,36 @@
 import {useState, useEffect} from "react";
-import { accessToken } from "../hooks/getToken"
-
 
 //components
-import Grid from "./Grid";
 import Header from "./Header";
-// import Playlist from "./Playlist";
+import Grid from "./Grid";
 
-
-//hooks
-
-//spotify
-import SpotifyWebApi from "spotify-web-api-js";
-const spotify = new SpotifyWebApi();
-
+import { accessToken } from '../config';
+import { getUser, getPlaylists } from "../APIs"
 
 const Home = () => {
-  const [playlists, setPlaylists] = useState(null);
+  const [access, setAccess] = useState(null);
+  const [user, setUser] = useState(null)
+  const [playlists, setPlaylists] = useState(null)
 
-  const getPlaylists = async() => {
-    try {
-      await spotify.getUserPlaylists()
-      .then((playlists) => {
-        setPlaylists(playlists.items);
-      });
-    } catch (e) {
-        console.log('error in playlist loading', e)
-    } 
-} 
-console.log(playlists)
+  useEffect(() => {
+    const getUserData = async () => {
+      const userData = await getUser();
+      setUser(userData.data)
+      console.log(userData.data)
 
-useEffect(()=> {
-  if(accessToken) {
-    spotify.setAccessToken(accessToken);
-    getPlaylists();
-;
-  }
-}, []);
+      const userPlaylists = await getPlaylists();
+      setPlaylists(userPlaylists.data.items)
+      console.log(userPlaylists.data)
+    }   
+    getUserData();
+   
+    },[])
+
 
   return (
     <>
       <Header /> 
-      <Grid playlists = {playlists}
-              />
-
+        <Grid playlists = {playlists}/>
     </>
   );
 };
