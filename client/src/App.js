@@ -9,10 +9,10 @@ import { BrowserRouter as Router,
 import { GlobalStyle } from "./GlobalStyle";
 
 //components
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import Login from "./components/Login"
 import Grid from "./components/Grid";
-import Tracks from "./components/Tracks";
+import Tracks from "./components/Tracks/Tracks";
 
 import { accessToken } from './config';
 import { getUser } from "./APIs"
@@ -24,17 +24,16 @@ const App = () => {
   
   useEffect(() => {
     setAccess(accessToken)
-    const getUserData = async () => {
-      const response = await getUser();
-      setUser(response.data)
-      console.log(response.data)
-    }
-    getUserData();
+    
+    // const getUserData = async () => {
+    //   const response = await getUser();
+    //   setUser(response.data)
+    //   console.log(response.data)
   },[access])
 
  return (
   <Router>
-        {!user ? <Login/> :
+        {!access ? <Login/> :
 
         <Switch>
             <Route path="/search"/>
@@ -42,7 +41,7 @@ const App = () => {
             <Route path="/playlist/:id"><Tracks/></Route> 
             <Route path="/"><Home/></Route>
         </Switch>
-                    }
+        }
       <GlobalStyle />
   </Router>
 

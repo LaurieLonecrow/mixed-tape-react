@@ -1,38 +1,36 @@
 import { Link } from "react-router-dom";
 
-import { Wrapper, Content, Image } from "./Grid.styles.js";
-
-// import Playlist from "../Playlist/index.js";
+import { Wrapper, Content, Card, Image } from "./Grid.styles.js";
 
 
 const Grid = ({playlists}) => {
 
-console.log(playlists)
+console.log(playlists, 'Grid')
 
 return (
+  
   <Wrapper>
-    <Content>
 {playlists && playlists.length ? (
-      <>
+  <>
+  <Content>
         {playlists.map((playlist, i) => (
-          <li key={i}>
-            <Link to={`/playlist/${playlist.id}`}>
+          <Card key={i}>
+            <Link className="playlist_name" to={`/playlist/${playlist.id}`}>
               {playlist.images.length && playlist.images[0] && (
                 <div >
                   <Image src={playlist.images[0].url} alt={playlist.name} />
                 </div>
               )}
-              <h3 className="playlist_name">{playlist.name}</h3>
+              <h3 >{playlist.name}</h3>
             </Link>
-          </li>
+          </Card>
         ))}
-      </>
-    ) : (
-      <p>No playlists available</p>
-    )}
+  </Content>
+  </>
+    ) : ( <p>No playlists available</p> )}
 
-    </Content>
   </Wrapper>
+    
 )
 };
 

@@ -23,7 +23,7 @@ const login = (req, res) => {
     res.cookie(stateKey, state);
 
       const scope = [
-     "playlist-modify-private playlist-read-private playlist-modify-public playlist-read-collaborative user-read-playback-state user-modify-playback-state app-remote-control"
+     "playlist-modify-private playlist-read-private playlist-modify-public playlist-read-collaborative user-read-playback-state user-modify-playback-state app-remote-control streaming user-read-email user-read-private"
    ]
   
     res.redirect('https://accounts.spotify.com/authorize?' +

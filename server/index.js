@@ -8,6 +8,7 @@ const router = require('./router.js');
 
 
 app.use(cors())
+   .use(express.json())
    .use(router);
 
  app.listen(3001)

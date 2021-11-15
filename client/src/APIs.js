@@ -1,5 +1,4 @@
-// Configure API calls to Spotify using the accessToken from ./config
-
+// API calls to Spotify using the accessToken from ./config
 import { accessToken } from "./config";
 import axios from 'axios'
 
@@ -16,4 +15,7 @@ export const getPlaylists = (limit = 10) => {
 export const getTracks = (playlist_id) => {
     return axios.get(`/playlists/${playlist_id}`)
 };
+
+// Calls to the server to create/get text
+
 

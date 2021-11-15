@@ -5,22 +5,15 @@ const getText = async (req, res) => {
     try {
       const body = await Track.find({});
       res.status(200).send(body);
-    } catch (e) {
+    } catch (err) {
+      console.log(err, 'error at Get')
       res.status(500);
     }
   };
   
   const postText = async (req, res) => {
-      
     try {
-      const newText = new Track({
-            ...req.body
-      });
-      console.log(newText)
-      const text = await newText.create({
-        trackId: req.body.trackId,
-        content: req.body.content
-      });
+      const text = await Track.create(req.body)
       res.status(201).send(text);
     } catch (err) {
       console.log(err, 'error at Post')

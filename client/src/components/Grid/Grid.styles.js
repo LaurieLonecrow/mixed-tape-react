@@ -2,12 +2,15 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  max-width: var(--maxWidth);
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 0;
+  padding: 20px;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--medGrey);
+  height: 100%;
+  overflow-y: scroll;
 
-  h1 {
-    color: var(--medGrey);
 
     @media screen and (max-width: 768px) {
       font-size: var(--fontBig);
@@ -15,29 +18,35 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Content = styled.ul`
+export const Content = styled.div`
   list-style: none;
   margin: 0;
   padding: 20px 0;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 2rem;
-
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
   .playlist_name {
     text-decoration: none;
+    color: var(--white);
   }
 `;
 
+export const Card = styled.li`
+ background-color: var(--darkGrey);
+ border-radius: 8px;
+ padding: 16px;
+
+ :hover {
+  opacity: 0.8;
+}
+
+`;
+
 export const Image = styled.img`
-width: 100%;
+  width: 100%;
   height: 100%;
-  max-width: 250px;
   transition: all 0.3s;
   object-fit: cover;
-  border-radius: 20px;
-
-  :hover {
-    opacity: 0.8;
-  }
 
 `;

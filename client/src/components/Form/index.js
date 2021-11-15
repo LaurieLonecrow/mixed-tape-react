@@ -1,8 +1,21 @@
 import React, { useState } from "react";
 
 //components
+import Playlist from "../Playlist";
+
+//styles
+import { Wrapper, Content, Chat} from './Form.styles'
+
 
 const Form = (props) => {
+    //modal functionality of form 
+    const [formView, setFormView] = useState(false)
+    
+    function showForm(e){
+        setFormView(true)
+    }
+    
+    //handling text inputs
     const[input, setInput]=useState({
         trackId: "",
         content: ""
@@ -10,26 +23,32 @@ const Form = (props) => {
 
     function handleChange(e){
         const value = e.target.value
+        const spotifyId = props.trackId
         setInput({
-            ...input,
-            [e.target.name]:value
+            content: value,
+            trackId: spotifyId
         });
     }
 
     function handleSubmit(e){
         e.preventDefault();
         props.onSubmit(input);
-        setInput({trackId: '', content:''});
+        setInput({trackId:'', content:''});
+        setFormView(false);
     }
 
 return (
-    <div>
-        <form value={`${props.trackId}`} name='trackId' className='form-container'onSubmit={handleSubmit}>
-            <textarea type='text' name='content' rows="7" cols="100"
+    <Wrapper>
+        <Chat onClick={showForm}/>
+        {formView ?
+        (<Content>
+        <form className='form-container'onSubmit={handleSubmit}>
+            <textarea type='textarea' name='content' rows="7" cols="100"
                 placeholder='Insert a description...' value={input.content} onChange={handleChange}/>
             <button type='submit' disabled={!input.content}>Create</button>
         </form>
-        </div>
+        </Content> ) : null}
+    </Wrapper>
     
 )
 };

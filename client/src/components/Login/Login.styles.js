@@ -1,14 +1,47 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
-  
-export const Wrapper = styled.div``;
+const fadeIn = keyframes `
+0% { opacity: 0; }
+100% { opacity: 1; }
+`
 
-export const Content = styled.button`
-    padding: 10px;
+export const PageWrapper = styled.div`
+ background-color: var(--darkGrey);
+ background-image: url("https://res.cloudinary.com/lonecrow/image/upload/v1636917959/stage_dyjbzz.jpg");
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100vw;
+`;  
+
+export const LoginWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;`;
+
+export const Content = styled.div`
+    position: absolute;
+    top: 35%;
+    left: auto;
+    padding: 20px 40px;
     border-radius: 99px;
-    font-weight: 400;
-    color: white;
-    text-decoration: none;
     background-color: #1db954;
+    animation: ${fadeIn} 5s linear forwards;;
+    
+    &:hover,
+  &:focus {
+    text-decoration: none;
+    filter: brightness(1.1);
+
+  }
+
+  a {
+    color: white;
+    font-weight: 300;
+    font-size: 2rem;
+    text-decoration: none;
+  }
     `;
   

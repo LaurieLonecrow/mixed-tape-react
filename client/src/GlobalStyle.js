@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+
 export const GlobalStyle = createGlobalStyle`
 :root {
     --maxWidth: 1280px;
@@ -15,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    font-family: 'Abel', sans-serif;
+    font-family: 'Abel', 'Shadows Into Light', sans-serif;
   }
 
   body {
@@ -37,6 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     p {
       font-size: 1rem;
       color: var(--white);
+      font-family: 'Shadows Into Light', cursive;
     }
   }
 `;
