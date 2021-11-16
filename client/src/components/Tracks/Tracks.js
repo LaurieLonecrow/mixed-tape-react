@@ -5,10 +5,11 @@ import { getTracks } from "../../APIs";
 
 //components
 import Form from '../Form'
-import Header from '../Header'
+import Sidebar from '../Sidebar'
 import Playlist from "../Playlist";
-import Text from "../Text/Text";
-import HeroImage from "../HeroImage";
+import Text from "../Text";
+import Hero from "../Hero";
+import Loader from "../Loader";
 
 
 //styles 
@@ -29,7 +30,7 @@ const Tracks = () => {
     }
 
     const createText = async (newText) => {
-        console.log(newText, 'newText')
+        // console.log(newText, 'newText')
         const request ={
           method: 'POST',
           headers: {
@@ -79,10 +80,11 @@ const Tracks = () => {
 return (
 
     <Wrapper>
-        <Header/>
+        <Sidebar/>
         {tracksData ? (
         <div className="main-container">
-        <HeroImage playlists={playlistData}/>
+        <Hero source={playlistData.images[0].url}
+                    playlists={playlistData}/>
         <Content>
             {tracksData.items.map((track, i) => (
             <li  key={i}>
@@ -100,7 +102,7 @@ return (
                 </li>))}
         </Content>
         </div>
-        ) : <p>No Tracks Available</p>}
+        ) : <Loader />}
     </Wrapper>
 )
 }

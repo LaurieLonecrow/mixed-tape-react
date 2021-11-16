@@ -12,6 +12,11 @@ export const PageWrapper = styled.div`
  background-repeat: no-repeat;
  background-size: cover;
  width: 100vw;
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 `;  
 
 export const LoginWrapper = styled.div`
@@ -19,16 +24,16 @@ export const LoginWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;`;
+  `;
 
 export const Content = styled.div`
     position: absolute;
-    top: 35%;
+    top: 60%;
     left: auto;
     padding: 20px 40px;
     border-radius: 99px;
     background-color: #1db954;
-    animation: ${fadeIn} 5s linear forwards;;
+    animation: ${fadeIn} 3s linear forwards;;
     
     &:hover,
   &:focus {

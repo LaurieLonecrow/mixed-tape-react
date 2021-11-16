@@ -13,7 +13,7 @@ const LOCALSTORAGE_KEYS = {
     timestamp: window.localStorage.getItem(LOCALSTORAGE_KEYS.timestamp),
   };
 
- const getToken = () => {
+const getToken = () => {
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const tokenParams = {
@@ -25,7 +25,6 @@ console.log(LOCALSTORAGE_VALUES.accessToken);
 
 //if user has logged in before and there is an accessToken in storage, return the value of it here
 if (LOCALSTORAGE_VALUES.accessToken && LOCALSTORAGE_VALUES.accessToken !== 'undefined') {
-  window.history.pushState({},null, '/');
   return LOCALSTORAGE_VALUES.accessToken
 }
 

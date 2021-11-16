@@ -6,19 +6,16 @@ to { height: 100%; }
 `;
 
 const fadeIn = keyframes `
-0% { opacity: 0; }
+0% { opacity: .2; }
 50% { opacity: 1; }
-100% { opacity: 0; }
+100% { opacity: .2; }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 50vh;
   background-color: transparent;
-  position: absolute;
-  width: 100vw;
 `;
 
 export const Content = styled.div`
@@ -27,12 +24,11 @@ export const Content = styled.div`
   justify-content: center;
   width: 200px;
   height: 100px;
-  position: relative;
   left: 0;
   top: 0;
   overflow: hidden;
   margin: 0 auto;
-  animation: ${fadeIn} 4s linear forwards;
+  animation: ${fadeIn} 2s forwards infinite;
 `;
 
 export const Bar = styled.div`

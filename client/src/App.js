@@ -2,46 +2,40 @@ import {useState, useEffect} from "react";
 
 import { BrowserRouter as Router, 
   Switch, 
-  Route, 
-  useLocation } from 'react-router-dom';
+  Route } from 'react-router-dom';
 
   //stylesheet
 import { GlobalStyle } from "./GlobalStyle";
 
 //components
-import Home from "./components/Home/Home";
+import Home from "./components/Home";
 import Login from "./components/Login"
-import Grid from "./components/Grid";
 import Tracks from "./components/Tracks/Tracks";
+import Playlists from "./components/PlaylistsPage/Playlists";
 
 import { accessToken } from './config';
-import { getUser } from "./APIs"
-
 
 const App = () => {
-  const [access, setAccess] = useState(null);
-  const [user, setUser] = useState(null)
+  const [access, setAccess] = useState([]);
   
   useEffect(() => {
     setAccess(accessToken)
     
-    // const getUserData = async () => {
-    //   const response = await getUser();
-    //   setUser(response.data)
-    //   console.log(response.data)
   },[access])
 
  return (
   <Router>
-        {!access ? <Login/> :
+        {access && access.length ?  
 
         <Switch>
-            <Route path="/search"/>
-            <Route path="/playlists"><Grid/></Route>
             <Route path="/playlist/:id"><Tracks/></Route> 
+            <Route path="/search"/>
+            <Route path="/playlists"><Playlists/></Route>
             <Route path="/"><Home/></Route>
+
         </Switch>
-        }
+        : <Login/> }
+        
       <GlobalStyle />
   </Router>
 

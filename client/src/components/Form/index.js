@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 
 //components
-import Playlist from "../Playlist";
 
 //styles
-import { Wrapper, Content, Chat} from './Form.styles'
+import { Wrapper, Content, TextIcon, CloseIcon} from './Form.styles'
 
 
 const Form = (props) => {
     //modal functionality of form 
     const [formView, setFormView] = useState(false)
-    
-    function showForm(e){
-        setFormView(true)
-    }
+   
     
     //handling text inputs
     const[input, setInput]=useState({
@@ -39,10 +35,11 @@ const Form = (props) => {
 
 return (
     <Wrapper>
-        <Chat onClick={showForm}/>
+        <TextIcon onClick={() => setFormView(!formView)}/>
         {formView ?
         (<Content>
         <form className='form-container'onSubmit={handleSubmit}>
+          <CloseIcon onClick={() => setFormView(!formView)}/>
             <textarea type='textarea' name='content' rows="7" cols="100"
                 placeholder='Insert a description...' value={input.content} onChange={handleChange}/>
             <button type='submit' disabled={!input.content}>Create</button>

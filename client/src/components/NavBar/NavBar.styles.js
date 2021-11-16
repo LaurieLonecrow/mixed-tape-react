@@ -12,6 +12,15 @@ color: #fff;
 
 export const Content = styled.div`
 
+
+`;
+
+export const Button = styled.button`
+background-color: var(--lightGrey);
+border: none;
+border-radius: 10px;
+width: 100px;
+
 `;
 
 export const Text = styled.div`
@@ -21,8 +30,9 @@ export const Text = styled.div`
   gap: 20px;
   text-decoration: none;
   list-style-type: none;
+
 `;
 
 export const Dropdown = styled(BsGear)`
-  
+  cursor: pointer;
 `;

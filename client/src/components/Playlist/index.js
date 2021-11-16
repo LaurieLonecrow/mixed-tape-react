@@ -10,7 +10,7 @@ const Playlist = ({track}) => {
   <Wrapper>
     <Content>
                 <div>
-                  <img className="album_img"src={track.track.album.images[0].url}/>
+                  <img className="album_img"src={track.track.album.images[0].url} alt="album-cover"/>
                 </div>
                 <div className="left_box">
                   <h3 className="track_name">{track.track.name}</h3>

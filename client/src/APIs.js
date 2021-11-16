@@ -16,6 +16,9 @@ export const getTracks = (playlist_id) => {
     return axios.get(`/playlists/${playlist_id}`)
 };
 
-// Calls to the server to create/get text
+export const getTopArtists = () => {
+    return axios.get(`/me/top/artists`)
+};
+
 
 

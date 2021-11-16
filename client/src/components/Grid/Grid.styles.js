@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   background-color: var(--medGrey);
   height: 100%;
-  overflow-y: scroll;
 
 
     @media screen and (max-width: 768px) {
@@ -18,29 +17,33 @@ export const Wrapper = styled.div`
   }
 `;
 
+
 export const Content = styled.div`
-  list-style: none;
-  margin: 0;
-  padding: 20px 0;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  .playlist_name {
-    text-decoration: none;
-    color: var(--white);
-  }
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+ grid-gap: 10px;
+list-style: none;
+margin: 0;
+padding: 20px 0;
+width: 100%;
+overflow-y: scroll;
+
 `;
 
-export const Card = styled.li`
+export const Card = styled.div`
+ display: inline-block;
  background-color: var(--darkGrey);
  border-radius: 8px;
  padding: 16px;
 
+ .playlist_name {
+  text-decoration: none;
+  color: var(--white);
+}
+
  :hover {
   opacity: 0.8;
 }
-
 `;
 
 export const Image = styled.img`
