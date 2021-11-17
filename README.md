@@ -1,0 +1,1 @@
+This is an app built using React/Styled Components, with Express/Node.js server and database on MongoDB Atlas with Mongoose.  The app pulls data from Spotify and show a user's playlists, allowing customizations such as adding descriptions and saving the playlists in order to share them with other users.
