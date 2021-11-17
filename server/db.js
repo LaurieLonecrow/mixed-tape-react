@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  `mongodb://localhost:27017/mixedTape`, 
+  // `mongodb://localhost:27017/mixedTape`, 
+  process.env.MONGODB_URI,
 { useNewUrlParser: true, useUnifiedTopology: true },
 (err) => {
     if (err) {

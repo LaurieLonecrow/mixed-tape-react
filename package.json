@@ -1,0 +1,30 @@
+{
+  "name": "mixed-tape-react",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "14.15.0"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "server": "nodemon index.js",
+    "client": "cd client && npm start",
+    "postinstall": "cd client && npm install",
+    "build": "NODE_ENV=production cd client/ && npm install && npm run build",
+    "start-server": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaurieLonecrow/mixed-tape-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaurieLonecrow/mixed-tape-react/issues"
+  },
+  "homepage": "https://github.com/LaurieLonecrow/mixed-tape-react#readme"
+}

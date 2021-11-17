@@ -5,7 +5,7 @@ const axios = require('axios');
 
 const client_id = process.env.SPOTIFY_CLIENT_ID; // client id
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET; // secret
-const redirect_uri = 'http://localhost:3001/callback'; // redirect uri
+const redirect_uri = process.env.REDIRECT_URI; // redirect uri
 
 
 
@@ -59,7 +59,7 @@ const login = (req, res) => {
         const params = querystring.stringify({
           access_token, refresh_token, expires_in
         });
-        res.redirect(`http://localhost:3000/?${params}`);
+        res.redirect(`${process.env.FRONTEND_URI}/?${params}`);
       } else {
         res.redirect(`/?${querystring.stringify({ error: 'invalid_token' })}`);
       }

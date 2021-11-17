@@ -4,7 +4,11 @@ import HeadingTitle from "../HeadingTitle/index.js"
 import { PageWrapper, LoginWrapper, Content } from "./Login.styles.js"
 
 export default function Login() {
-  
+   
+    const LOGIN_URI =
+    process.env.NODE_ENV !== 'production'
+    ? 'http://localhost:3001/login'
+    : 'https://mixed-tape-app.herokuapp.com/login';
 
     return (
     <PageWrapper>
@@ -14,7 +18,7 @@ export default function Login() {
       <Loader/>
         <LoginWrapper>
             <Content>
-            <a href="http://localhost:3001/login">Login</a>
+            <a href={LOGIN_URI}>Login</a>
             </Content>
         </LoginWrapper>
     </PageWrapper>
