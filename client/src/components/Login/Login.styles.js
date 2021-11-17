@@ -17,6 +17,14 @@ export const PageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  .title {
+    padding: 0 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+  }
 `;  
 
 export const LoginWrapper = styled.div`

@@ -99,7 +99,7 @@ return (
                         ) : null}
                 <Form onSubmit={createText} trackId={track.track.id}/>
                </div>
-                </li>))}
+            </li>))}
         </Content>
         </div>
         ) : <Loader />}
