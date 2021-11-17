@@ -9,4 +9,4 @@ This is an app I built as a solo-project for a coding bootcamp.
 
 ## How it works
 
-This is app is built using React with Styled Components, and served in Express/Node.js with a database on MongoDB Atlas controlled with Mongoose.  The app pulls data from Spotify and show a user's playlists, allowing customizations such as adding descriptions and saving the playlists in order to share them with other users.
+This app is built using React with Styled Components, and served in Express/Node.js with a database on MongoDB Atlas controlled with Mongoose.  The app pulls data from Spotify and shows a user's playlists, allowing customizations such as adding descriptions and saving the playlists in order to share them with other users.
