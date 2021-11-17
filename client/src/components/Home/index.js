@@ -42,9 +42,6 @@ const Home = () => {
     <Wrapper >
       <Sidebar /> 
         <Content>
-            {/* <ImageWrapper>
-            <Image src={user.images[0].url} alt="cover-art"/> 
-            </ImageWrapper> */}
           <ImageCarousel items={topArtists} heading={'Top Artists'}/>
         </Content>
                 
