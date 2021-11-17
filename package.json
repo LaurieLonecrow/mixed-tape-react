@@ -15,7 +15,7 @@
     "client": "cd client && npm start",
     "postinstall": "cd client && npm install",
     "build": "NODE_ENV=production cd client/ && npm install && npm run build",
-    "start-server": "node index.js"
+    "start-server": "node server/index.js"
   },
   "repository": {
     "type": "git",
