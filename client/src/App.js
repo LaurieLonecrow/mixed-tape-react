@@ -31,7 +31,7 @@ const App = () => {
             <Route path="/playlist/:id"><Tracks/></Route> 
             <Route path="/search"/>
             <Route path="/playlists"><Playlists/></Route>
-            <Route path="/"><Playlists/></Route>
+            <Route path="/"><Home /></Route>
 
         </Switch>
         : <Login/> }
