@@ -7,9 +7,12 @@ import HeadingTitle from "../HeadingTitle/index.js";
 //styles
 import { Wrapper, Content, Card, Image } from "./Grid.styles.js";
 
+type GridProp = {
+  playlists: []
+}
 
 const Grid = ({playlists, source}) => {
-
+  console.log(typeof(playlists), "playlists")
 return (
   
   <Wrapper>
