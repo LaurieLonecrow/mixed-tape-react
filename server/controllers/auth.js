@@ -3,11 +3,14 @@
 const querystring = require('query-string');
 const axios = require('axios');
 
-const client_id = process.env.SPOTIFY_CLIENT_ID; // client id
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET; // secret
-const redirect_uri = process.env.REDIRECT_URI; // redirect uri
-
-
+const client_id = 'ac468ec84f8d4070843bb0ce3cfd5c95';
+//process.env.SPOTIFY_CLIENT_ID; // client id
+const client_secret = 'e35c37b3eb0f4fbfb45f71456255a6e7';
+// process.env.SPOTIFY_CLIENT_SECRET; // secret
+const redirect_uri = 'http://localhost:3001/callback';
+// process.env.REDIRECT_URI; // redirect uri
+const frontend_uri = 'http://localhost:3000';
+// process.env.FRONTEND_URI;
 
 const generateRandomString = function(length) {
   let text = '';
@@ -59,7 +62,7 @@ const login = (req, res) => {
         const params = querystring.stringify({
           access_token, refresh_token, expires_in
         });
-        res.redirect(`${process.env.FRONTEND_URI}/?${params}`);
+        res.redirect(`${frontend_uri}/?${params}`);
       } else {
         res.redirect(`/?${querystring.stringify({ error: 'invalid_token' })}`);
       }
