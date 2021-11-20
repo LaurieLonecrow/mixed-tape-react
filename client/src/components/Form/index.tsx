@@ -7,7 +7,6 @@ type FormPropType = {
     onSubmit:Function
 }
 
-
 const Form = (props: FormPropType) => {
     //modal functionality of form 
     // console.log(typeof(props), "PROPS")

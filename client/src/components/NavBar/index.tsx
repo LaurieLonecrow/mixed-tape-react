@@ -8,7 +8,7 @@ import { Wrapper, Content, Text, Dropdown, Button } from "./NavBar.styles";
 const Navbar = () => {
   const [dropDown, setDropDown] = useState(false);
 
-  function showDropdown(e){
+  function showDropdown(e: React.MouseEvent<HTMLButtonElement>){
     setDropDown(!dropDown)
   }
 

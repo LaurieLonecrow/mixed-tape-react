@@ -3,7 +3,7 @@ import React from "react";
 
 import { Wrapper, Content } from "./Playlist.styles.js";
 
-const Playlist = ({track}) => {
+const Playlist = ({track}:any) => {
 
   return (
   <>
@@ -15,7 +15,7 @@ const Playlist = ({track}) => {
                 <div className="left_box">
                   <h3 className="track_name">{track.track.name}</h3>
                   <div className="artist_name" >
-                  {track.track.artists.map((artist, i) => (
+                  {track.track.artists.map((artist:any, i:string) => (
                       <li key={i}>{artist.name}</li>
                   ))}
                   </div>
