@@ -12,3 +12,4 @@ The app pulls data from Spotify and shows a user's playlists, allowing customiza
 ## How it works
 
 This app is built using React with Styled Components, and served in Express/Node.js with a database on MongoDB Atlas controlled with Mongoose.  
+https://youtu.be/Zb7GlJf4Pck
