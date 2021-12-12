@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(
-  // `mongodb://localhost:27017/mixedTape`, 
-  process.env.MONGODB_URI,
+mongoose.connect('mongodb+srv://emilyhpark:Pa$$w0rd@cluster0.jd1zv.mongodb.net/events_db',
 { useNewUrlParser: true, useUnifiedTopology: true },
 (err) => {
     if (err) {
